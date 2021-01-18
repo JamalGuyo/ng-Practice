@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
   template: `
     <div>
-      <h1>{{ title }}</h1>
+      {{ title }}
     </div>
   `,
 })
