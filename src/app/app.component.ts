@@ -5,13 +5,9 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
   template: `
     <div>
-      <h1>Event binding</h1>
-      <input
-        type="text"
-        [ngModel]="title"
-        (ngModelChange)="handleChange($event)"
-      />
-      <input type="text" [(ngModel)]="title" />
+      <h1>Using template ref variable</h1>
+      <button (click)="handleClick(username.value)">save value</button>
+      <input type="text" #username />
       <h2 [innerHTML]="title"></h2>
     </div>
   `,
@@ -19,7 +15,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title: String = 'ultimate course';
   //
-  handleChange(value: string) {
+  handleClick(value: string) {
     this.title = value;
   }
 }
