@@ -7,8 +7,20 @@ import { Component } from '@angular/core';
     <div>
       {{ title }}
     </div>
+    <div>
+      {{ num1 + num2 }}
+    </div>
+    <div>
+      {{ isHappy ? ':)' : ':(' }}
+    </div>
   `,
 })
 export class AppComponent {
-  title = 'Ultimate Course';
+  title: String;
+  num1: number = 1;
+  num2: number = 2;
+  isHappy: boolean = false;
+  constructor() {
+    this.title = 'Ultimate course';
+  }
 }
