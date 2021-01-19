@@ -5,28 +5,30 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
   template: `
     <div>
-      {{ title }}
-    </div>
-    <div>
-      {{ num1 + num2 }}
-    </div>
-    <div>
-      {{ isHappy ? ':)' : ':(' }}
-    </div>
-    <div>
-      <h1>Property binding</h1>
+      <h1>Event binding</h1>
+      <input
+        type="text"
+        [value]="title"
+        (blur)="handleBlur($event)"
+        (input)="handleInput($event)"
+      />
+      <button (click)="handleClick()">Change Input value</button>
       <h2 [innerHTML]="title"></h2>
-      <input type="text" [value]="title" />
     </div>
   `,
 })
 export class AppComponent {
-  title: String;
-  num1: number = 1;
-  num2: number = 2;
-  isHappy: boolean = false;
+  title: String = 'ultimate course';
   //
-  constructor() {
+  handleBlur(event) {
+    this.title = event.target.value;
+  }
+
+  handleInput(event) {
+    this.title = event.target.value;
+  }
+
+  handleClick() {
     this.title = 'Ultimate course';
   }
 }
