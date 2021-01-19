@@ -13,6 +13,11 @@ import { Component } from '@angular/core';
     <div>
       {{ isHappy ? ':)' : ':(' }}
     </div>
+    <div>
+      <h1>Property binding</h1>
+      <h2 [innerHTML]="title"></h2>
+      <input type="text" [value]="title" />
+    </div>
   `,
 })
 export class AppComponent {
@@ -20,6 +25,7 @@ export class AppComponent {
   num1: number = 1;
   num2: number = 2;
   isHappy: boolean = false;
+  //
   constructor() {
     this.title = 'Ultimate course';
   }
