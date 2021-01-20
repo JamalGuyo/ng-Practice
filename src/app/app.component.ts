@@ -5,17 +5,19 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
   template: `
     <div>
-      <h1>Using template ref variable</h1>
-      <button (click)="handleClick(username.value)">save value</button>
-      <input type="text" #username />
-      <h2 [innerHTML]="title"></h2>
+      <h1>Using *ngIf directive</h1>
+      <input type="text" [(ngModel)]="title" />
+      <ng-template [ngIf]="title.length">
+        <div>
+          <h2>searching for : {{ title }}</h2>
+        </div>
+      </ng-template>
+      <div *ngIf="title.length">
+        <h2>searching for : {{ title }}</h2>
+      </div>
     </div>
   `,
 })
 export class AppComponent {
   title: String = 'ultimate course';
-  //
-  handleClick(value: string) {
-    this.title = value;
-  }
 }
