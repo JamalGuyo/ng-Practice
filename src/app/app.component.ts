@@ -11,27 +11,7 @@ interface Passenger {
   styleUrls: ['app.component.scss'],
   template: `
     <div>
-      <h1>List of passengers</h1>
-      <ul>
-        <li *ngFor="let p of passengers; let i = index">
-          <span
-            class="status"
-            [ngStyle]="{
-              backgroundColor: p.checkedIn ? 'green' : 'red'
-            }"
-          ></span>
-          <!-- <span
-            class="status"
-            [style.backgroundColor]="p.checkedIn ? 'green' : 'red'"
-          ></span> -->
-          <!-- <span class="status" [ngClass]="{ 'checked-in': p.checkedIn }"></span> -->
-          <!-- <span class="status" [class.checked-in]="p.checkedIn"></span> -->
-          {{ i }} {{ p.fullName }}
-          <p>
-            {{ p | json }}
-          </p>
-        </li>
-      </ul>
+      <passenger-dashboard></passenger-dashboard>
     </div>
   `,
 })
