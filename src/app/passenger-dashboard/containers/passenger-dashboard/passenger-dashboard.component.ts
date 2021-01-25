@@ -8,38 +8,12 @@ import { Passenger } from '../../models/passenger.interface';
   styleUrls: ['passenger-dashboard.component.scss'],
   template: `
     <div>
-      <passenger-count [items]="passengers"></passenger-count>
-      <passenger-detail></passenger-detail>
-      <ul>
-        <li *ngFor="let p of passengers; let i = index">
-          <span
-            class="status"
-            [ngStyle]="{
-              backgroundColor: p.checkedIn ? 'green' : 'red'
-            }"
-          ></span>
-          <h2>{{ i }} {{ p.fullname }}</h2>
-          <!-- <span
-            class="status"
-            [style.backgroundColor]="p.checkedIn ? 'green' : 'red'"
-          ></span> -->
-          <!-- <span class="status" [ngClass]="{ 'checked-in': p.checkedIn }"></span> -->
-          <!-- <span class="status" [class.checked-in]="p.checkedIn"></span> -->
-          <!-- children -->
-          <div class="date">
-            Check In Date:
-            {{
-              p.checkInDate
-                ? (p.checkInDate | date: 'dd-MMMM-yyyy' | uppercase)
-                : 'Not Checked In'
-            }}
-          </div>
-          <div class="children">Children: {{ p.children?.length || 0 }}</div>
-          <!-- <p>
-            {{ p | json }}
-          </p> -->
-        </li>
-      </ul>
+      <passenger-count [items]="passengers"> </passenger-count>
+      <passenger-detail
+        *ngFor="let passenger of passengers"
+        [detail]="passenger"
+      >
+      </passenger-detail>
     </div>
   `,
 })
