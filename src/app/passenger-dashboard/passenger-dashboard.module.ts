@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 // containers
 import { PassengerDashboardComponent } from './containers/passenger-dashboard/passenger-dashboard.component';
 
 // components
 import { PassengerCountComponent } from './components/passenger-count/passenger-count.component';
 import { PassengerDetailComponent } from './components/passenger-detail/passenger-detail.component';
+// services
+import { PassengerDashboardService } from './passenger-dashboard.service';
 
 @NgModule({
   declarations: [
@@ -13,7 +16,8 @@ import { PassengerDetailComponent } from './components/passenger-detail/passenge
     PassengerCountComponent,
     PassengerDetailComponent,
   ],
-  imports: [CommonModule],
+  providers: [PassengerDashboardService],
+  imports: [CommonModule, HttpClientModule],
   exports: [PassengerDashboardComponent],
 })
 export class PassengerDashboardModule {}
