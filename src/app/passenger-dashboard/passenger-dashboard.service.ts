@@ -15,4 +15,11 @@ export class PassengerDashboardService {
       .get<Passenger[]>(PASSENGER_API)
       .pipe(tap((data) => console.log(data)));
   }
+
+  updatePassenger(passenger: Passenger): Observable<Passenger> {
+    return this.http.put<Passenger>(
+      `${PASSENGER_API}/${passenger.id}`,
+      passenger
+    );
+  }
 }
