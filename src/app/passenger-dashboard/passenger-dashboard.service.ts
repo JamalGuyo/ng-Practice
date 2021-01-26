@@ -1,4 +1,4 @@
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
@@ -17,9 +17,14 @@ export class PassengerDashboardService {
   }
 
   updatePassenger(passenger: Passenger): Observable<Passenger> {
+    const httpHeaders = new HttpHeaders({
+      'content-type': 'application/json',
+      Authorization: 'ngdemo',
+    });
     return this.http.put<Passenger>(
       `${PASSENGER_API}/${passenger.id}`,
-      passenger
+      passenger,
+      { headers: httpHeaders }
     );
   }
 
