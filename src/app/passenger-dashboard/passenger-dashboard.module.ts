@@ -8,6 +8,7 @@ import { PassengerViewerComponent } from './containers/passenger-viewer/passenge
 // components
 import { PassengerCountComponent } from './components/passenger-count/passenger-count.component';
 import { PassengerDetailComponent } from './components/passenger-detail/passenger-detail.component';
+import { PassengerFormComponent } from './components/passenger-form/passenger-form.component';
 // services
 import { PassengerDashboardService } from './passenger-dashboard.service';
 
@@ -19,6 +20,7 @@ import { PassengerDashboardService } from './passenger-dashboard.service';
     // components
     PassengerCountComponent,
     PassengerDetailComponent,
+    PassengerFormComponent,
   ],
   providers: [PassengerDashboardService],
   imports: [CommonModule, HttpClientModule],

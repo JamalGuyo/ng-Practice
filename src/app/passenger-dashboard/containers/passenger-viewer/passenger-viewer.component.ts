@@ -7,8 +7,7 @@ import { Passenger } from '../../models/passenger.interface';
   styleUrls: ['passenger-viewer.component.scss'],
   template: `
     <div>
-      <h1>Passenger viewer component</h1>
-      {{ passenger | json }}
+      <passenger-form [detail]="passenger"></passenger-form>
     </div>
   `,
 })
