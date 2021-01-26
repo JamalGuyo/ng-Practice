@@ -11,7 +11,7 @@ interface Passenger {
   styleUrls: ['app.component.scss'],
   template: `
     <div>
-      <passenger-dashboard></passenger-dashboard>
+      <passenger-viewer></passenger-viewer>
     </div>
   `,
 })
